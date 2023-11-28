@@ -1,12 +1,11 @@
 import 'dart:convert';
+
 import 'package:http/http.dart' as http;
 
 import '../constant/const.dart';
 import '../models/login_response_model.dart';
 
 class AuthService {
-
-
   Future<LoginResponse?> loginUser(String username, String password) async {
     final url = Uri.parse(LOGIN_USER_API);
 
@@ -22,6 +21,8 @@ class AuthService {
 
       if (response.statusCode == 200) {
         final Map<String, dynamic> responseData = jsonDecode(response.body);
+        print("User Token: ");
+
         print(responseData.toString());
         return LoginResponse.fromJson(responseData);
       } else {

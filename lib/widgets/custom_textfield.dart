@@ -25,10 +25,19 @@ class CustomTextField extends StatelessWidget {
           // return null;
         },
         decoration: InputDecoration(
+
+          labelStyle: TextStyle(
+            color: Colors.black
+          ),
           labelText: labelText,
           contentPadding: const EdgeInsets.all(20),
           border: OutlineInputBorder(
+
             borderRadius: BorderRadius.circular(15.0),
+            borderSide: const BorderSide(
+              color: Colors.black,
+              width: 2.0
+            )
           ),
         ),
       ),
